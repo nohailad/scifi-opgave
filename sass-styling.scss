@@ -1,0 +1,115 @@
+$menu-bar-color: #191b31;
+$font-color: #eeeeee;
+$margin: 0;
+
+
+@mixin myfont{
+    font-family: Helvetica, arial, sans-serif;
+    font-weight: 200;
+    color: #ffffff;
+}
+
+@mixin mylinks{
+
+    text-decoration: none;
+    list-style: none;
+    @include myfont;
+    display: inline;
+}
+
+// -----------------------------------------------------
+
+html{
+    margin: 0;
+}
+body {
+    background-color: #0c0c0c;
+    margin: $margin
+}
+
+h1 {
+    @include myfont;
+    text-align: left;
+}
+
+h4 {
+    @include myfont;
+    text-align: center;
+}
+
+.h2-title, h3{
+    @include myfont;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.icon{
+    width: 30px;
+}
+
+.menu{
+    background: $menu-bar-color;
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    
+    li {
+        
+        display: inline;
+        @include myfont;
+            a{
+                margin: 50px 20px 0px 0px;
+                @include mylinks;
+            }
+        }
+    }
+
+.section-1{
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    p{
+        float: left;
+        @include myfont;
+        color: $font-color;
+        margin: 50px;
+
+    }
+ }
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+.row {
+    margin: 20px 50px 0px 50px;
+&:after {
+    content: "";
+    display: table;
+    clear: both;
+    margin-bottom: 100px;
+
+}
+}
+
+img {
+    width: 100%;
+}
+
+figcaption {
+    @include myfont;
+    color: $font-color;
+    margin-top: 25px;
+}
+
+.footer-container {
+    background-color: #191b31;
+    position: sticky;
+    overflow: hidden;
+    text-align: center;
+    @include myfont;
+    padding: 30px 0px 30px 0px;
+}
+
